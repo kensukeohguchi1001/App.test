@@ -9,8 +9,8 @@ export default function Header() {
         <Link to="/" className="header__logo">
           <div className="header__logo-icon">🍜</div>
           <div className="header__logo-text">
-            <span className="header__logo-main">Hiroshima Local Guide</span>
-            <span className="header__logo-sub">Real food, real locals</span>
+            <span className="header__logo-main">Hiroshima Local Plates</span>
+            <span className="header__logo-sub">For travelers who want to eat like locals</span>
           </div>
         </Link>
 

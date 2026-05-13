@@ -33,7 +33,7 @@ export default function Home() {
         <div className="hero__content">
           <div className="hero__eyebrow">
             <span className="hero__dot" />
-            Hiroshima, Japan — Local Food Guide
+            Hiroshima Local Plates
           </div>
           <h1 className="hero__title">
             Discover Hiroshima's<br />

@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="footer__inner">
         <div className="footer__top">
           <div className="footer__brand">
-            <div className="footer__logo-text">Hiroshima Local Guide</div>
+            <div className="footer__logo-text">Hiroshima Local Plates</div>
             <p className="footer__tagline">
-              Real recommendations from people who live and eat here every day.
+              For travelers who want to eat like locals.
             </p>
           </div>
           <div className="footer__links">
@@ -27,7 +27,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer__bottom">
-          © {new Date().getFullYear()} Hiroshima Local Guide — Not sponsored. Not a tourist trap.
+          © {new Date().getFullYear()} Hiroshima Local Plates — Not sponsored. Not a tourist trap.
         </div>
       </div>
     </footer>
