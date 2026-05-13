@@ -258,7 +258,7 @@ export const restaurants = [
       "Mostly a local crowd, but the staff welcome foreign guests warmly",
       "Point at what others are eating if you're unsure — it always works",
     ],
-    googleMapUrl: "https://maps.app.goo.gl/oUUEspzFpXPzayio7?g_st=ic",
+    googleMapUrl: "https://maps.app.goo.gl/oUUEspzFpXPzayio7",
     tags: ["seafood", "izakaya", "local", "casual", "lively", "sake", "group", "solo", "hidden-gem"],
     recommendedFor: ["Solo travelers", "Groups", "Seafood lovers", "Adventurous eaters"],
   },
