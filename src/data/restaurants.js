@@ -237,8 +237,7 @@ export const restaurants = [
     priceLabel: "¥2,000 – ¥3,000",
     atmosphere: "Local, After-work",
     badge: "Local Favorite",
-    // ★ この画像URLを実際の写真URLに差し替えてください
-    image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop",
+    image: "/9036119D-EDAF-4C27-A2EF-3D4CFD78677F.jpeg",
     description:
       "A beloved seafood izakaya tucked into Fukuromachi, where Hiroshima's salarymen gather straight after work. Uotora specializes in ultra-fresh fish and seafood — the kind of place where even travelers who normally avoid raw fish end up ordering sashimi, because it's so clean and not 'fishy' at all.",
     whyRecommended:
