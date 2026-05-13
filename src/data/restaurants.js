@@ -228,6 +228,42 @@ export const restaurants = [
     recommendedFor: ["Couples", "Small groups", "Foodies"],
   },
   {
+    id: 9,
+    name: "Uotora",
+    japaneseName: "魚寅",
+    category: "Seafood Izakaya",
+    area: "Fukuromachi",
+    priceRange: "¥¥",
+    priceLabel: "¥2,000 – ¥3,000",
+    atmosphere: "Local, After-work",
+    badge: "Local Favorite",
+    // ★ この画像URLを実際の写真URLに差し替えてください
+    image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&auto=format&fit=crop",
+    description:
+      "A beloved seafood izakaya tucked into Fukuromachi, where Hiroshima's salarymen gather straight after work. Uotora specializes in ultra-fresh fish and seafood — the kind of place where even travelers who normally avoid raw fish end up ordering sashimi, because it's so clean and not 'fishy' at all.",
+    whyRecommended:
+      "The fish here is genuinely fresh, and that freshness changes everything. Countless visitors who thought they disliked sashimi have their minds changed at Uotora. It's also a window into everyday Hiroshima life — no tourist performance, just locals enjoying great seafood.",
+    recommendedMenu: [
+      "Kaisen-maki half — seafood sushi roll, perfect starter",
+      "Gansu — Hiroshima's own fried fish cake, a local specialty you won't find elsewhere",
+      "Gyusuji nikomi — slow-cooked beef tendon stew, rich and warming",
+      "Namerou — minced seasoned fish on a crispy bite, pairs great with sake",
+      "Omakase nigiri — chef's selection of the day's best nigiri",
+      "Ko-iwashi no tempura — light, crispy small sardine tempura",
+      "Anago sashimi — fresh conger eel sashimi, a Hiroshima favorite",
+    ],
+    openingHours: "17:00–23:00 (Closed Sundays)",
+    notes: [
+      "Smoking is permitted inside — worth knowing if you're sensitive to smoke",
+      "English menu is limited — use Google Translate or show the staff this page's recommended dishes",
+      "Mostly a local crowd, but the staff welcome foreign guests warmly",
+      "Point at what others are eating if you're unsure — it always works",
+    ],
+    googleMapUrl: "https://maps.app.goo.gl/oUUEspzFpXPzayio7?g_st=ic",
+    tags: ["seafood", "izakaya", "local", "casual", "lively", "sake", "group", "solo", "hidden-gem"],
+    recommendedFor: ["Solo travelers", "Groups", "Seafood lovers", "Adventurous eaters"],
+  },
+  {
     id: 8,
     name: "Shunsuke",
     japaneseName: "旬助",
