@@ -983,13 +983,91 @@ ul {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 12px 14px;
+  padding: 14px 16px;
+  transition: border-color 0.2s;
 }
 
 .note-item .note-icon {
   font-size: 16px;
   flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ノートの本文エリア */
+.note-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.note-item__brief {
+  display: block;
+  line-height: 1.5;
+}
+
+/* 展開可能なノート */
+.note-item--expandable {
+  cursor: default;
+}
+
+.note-item--expandable:hover {
+  border-color: var(--border-hover);
+}
+
+/* 「+」トグルボタン */
+.note-item__toggle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
   margin-top: 1px;
+  /* テキスト選択されないように */
+  user-select: none;
+}
+
+.note-item__toggle:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+/* 開いているとき：「+」が「×」に回転 */
+.note-item__toggle--open {
+  background: var(--primary);
+  color: white;
+  transform: rotate(45deg);
+}
+
+/* 詳細テキスト（アコーディオン） */
+.note-item__detail {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top: 0;
+}
+
+.note-item__detail--open {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.note-item__detail p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
 }
 
 .good-for-tags {

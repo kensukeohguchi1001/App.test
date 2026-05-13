@@ -239,24 +239,37 @@ export const restaurants = [
     badge: "Local Favorite",
     image: "/9036119D-EDAF-4C27-A2EF-3D4CFD78677F.jpeg",
     description:
-      "A beloved seafood izakaya tucked into Fukuromachi, where Hiroshima's salarymen gather straight after work. Uotora specializes in ultra-fresh fish and seafood — the kind of place where even travelers who normally avoid raw fish end up ordering sashimi, because it's so clean and not 'fishy' at all.",
+      "A beloved seafood izakaya in Fukuromachi, right in the heart of where Hiroshima's office workers unwind after a long day. Every evening, the counter fills with salarymen relaxing over cold beer and exceptional fish. The vibe is unpretentious and genuinely local — no tourist energy, just people enjoying really good seafood. And the fish is so fresh and clean that even travelers who normally avoid raw fish often end up ordering sashimi without hesitation.",
     whyRecommended:
-      "The fish here is genuinely fresh, and that freshness changes everything. Countless visitors who thought they disliked sashimi have their minds changed at Uotora. It's also a window into everyday Hiroshima life — no tourist performance, just locals enjoying great seafood.",
+      "The quality of the fish here is immediately noticeable — it doesn't have the 'fishy' smell or taste that puts many people off sashimi. Time and time again, visitors who thought they didn't like raw fish change their minds at Uotora. Beyond the food, this place is one of the most authentic windows into everyday Hiroshima life you'll find.",
     recommendedMenu: [
-      "Kaisen-maki half — seafood sushi roll, perfect starter",
-      "Gansu — Hiroshima's own fried fish cake, a local specialty you won't find elsewhere",
-      "Gyusuji nikomi — slow-cooked beef tendon stew, rich and warming",
-      "Namerou — minced seasoned fish on a crispy bite, pairs great with sake",
-      "Omakase nigiri — chef's selection of the day's best nigiri",
-      "Ko-iwashi no tempura — light, crispy small sardine tempura",
-      "Anago sashimi — fresh conger eel sashimi, a Hiroshima favorite",
+      "Kaisen-maki half — a compact seafood sushi roll, the perfect way to start",
+      "Gansu — Hiroshima's own fried fish cake; a local specialty you won't find outside Hiroshima",
+      "Gyusuji nikomi — slow-braised beef tendon, rich and deeply savory",
+      "Namerou — finely minced, seasoned fish served on a crispy bite; pairs beautifully with sake",
+      "Omakase nigiri — chef's daily selection of the freshest nigiri; trust them on this one",
+      "Ko-iwashi no tempura — lightly battered small sardines, crispy and delicate",
+      "Anago sashimi — fresh conger eel sashimi, a Hiroshima specialty hard to find this good elsewhere",
     ],
     openingHours: "17:00–23:00 (Closed Sundays)",
+    // notesは文字列または { brief, detail } オブジェクトを混在できる
+    // detailがある場合、詳細ページで「+」ボタンで展開表示される
     notes: [
-      "Smoking is permitted inside — worth knowing if you're sensitive to smoke",
-      "English menu is limited — use Google Translate or show the staff this page's recommended dishes",
-      "Mostly a local crowd, but the staff welcome foreign guests warmly",
-      "Point at what others are eating if you're unsure — it always works",
+      {
+        brief: "Smoking is permitted inside",
+        detail:
+          "Japan's revised Health Promotion Act of 2020 strictly limits indoor smoking at most restaurants. However, small independently-run establishments that were already operating before 2020 — like Uotora — are legally exempt from this regulation. As a result, many of Hiroshima's beloved local izakayas still allow smoking indoors. If you're sensitive to cigarette smoke, it's worth keeping in mind before you visit.",
+      },
+      {
+        brief: "English menu is limited — but there are easy workarounds",
+        detail:
+          "The menu has some English, but it's not fully translated. The most reliable approach: open Google Translate on your phone, switch to camera mode, and point it at the menu — it works well here. Alternatively, simply show the staff this page and point to the dishes listed above. The staff are patient and genuinely happy to help foreign guests order.",
+      },
+      {
+        brief: "Foreigners are warmly welcome",
+        detail:
+          "Uotora is a local favourite with a mostly regular, Japanese crowd — but the restaurant's stance is clear: foreign guests are very welcome. Don't be put off by the unfamiliar atmosphere or the lack of English signage outside. Walk in, find a spot at the counter, and settle in. The staff will take good care of you.",
+      },
     ],
     googleMapUrl: "https://maps.app.goo.gl/oUUEspzFpXPzayio7",
     tags: ["seafood", "izakaya", "local", "casual", "lively", "sake", "group", "solo", "hidden-gem"],

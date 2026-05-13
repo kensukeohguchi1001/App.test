@@ -1,19 +1,62 @@
+import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getRestaurantById } from '../data/restaurants'
 
-// Notesのアイコンマッピング
-function noteIcon(note) {
-  const n = note.toLowerCase()
+// notesのアイコンマッピング（文字列・オブジェクト両対応）
+function noteIcon(text) {
+  const n = text.toLowerCase()
   if (n.includes('cash')) return '💴'
+  if (n.includes('smoking') || n.includes('smoke')) return '🚬'
   if (n.includes('english')) return '🇬🇧'
   if (n.includes('reservation')) return '📅'
   if (n.includes('small')) return '🏠'
   if (n.includes('solo')) return '🧍'
   if (n.includes('couple')) return '💑'
   if (n.includes('group')) return '👥'
+  if (n.includes('welcome') || n.includes('foreigner')) return '🌍'
   if (n.includes('busy') || n.includes('queue')) return '⏱️'
   if (n.includes('closed') || n.includes('open')) return '🕒'
   return 'ℹ️'
+}
+
+/**
+ * 展開可能なノートアイテム
+ * noteが文字列 → シンプル表示
+ * noteが { brief, detail } オブジェクト → 「+」ボタンで詳細を展開
+ */
+function NoteItem({ note }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const isExpandable = typeof note === 'object' && note.detail
+
+  const briefText = isExpandable ? note.brief : note
+  const detailText = isExpandable ? note.detail : null
+
+  return (
+    <li className={`note-item ${isExpandable ? 'note-item--expandable' : ''}`}>
+      <span className="note-icon">{noteIcon(briefText)}</span>
+
+      <div className="note-item__content">
+        <span className="note-item__brief">{briefText}</span>
+        {/* 展開エリア：max-heightでスムーズなアニメーション */}
+        {isExpandable && (
+          <div className={`note-item__detail ${isOpen ? 'note-item__detail--open' : ''}`}>
+            <p>{detailText}</p>
+          </div>
+        )}
+      </div>
+
+      {/* 展開トグルボタン */}
+      {isExpandable && (
+        <button
+          className={`note-item__toggle ${isOpen ? 'note-item__toggle--open' : ''}`}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close details' : 'Read more'}
+        >
+          +
+        </button>
+      )}
+    </li>
+  )
 }
 
 export default function RestaurantDetail() {
@@ -45,7 +88,6 @@ export default function RestaurantDetail() {
     category,
     area,
     priceLabel,
-    priceRange,
     atmosphere,
     badge,
     image,
@@ -56,7 +98,6 @@ export default function RestaurantDetail() {
     notes,
     googleMapUrl,
     recommendedFor,
-    tags,
   } = restaurant
 
   return (
@@ -123,15 +164,12 @@ export default function RestaurantDetail() {
           </div>
         </div>
 
-        {/* 注意事項 */}
+        {/* 注意事項（展開可能） */}
         <div className="detail-section">
           <h2 className="detail-section-title">Good to know</h2>
           <ul className="notes-list">
             {notes.map((note, i) => (
-              <li key={i} className="note-item">
-                <span className="note-icon">{noteIcon(note)}</span>
-                <span>{note}</span>
-              </li>
+              <NoteItem key={i} note={note} />
             ))}
           </ul>
         </div>
