@@ -1086,6 +1086,90 @@ ul {
   border-radius: 24px;
 }
 
+/* ===========================
+   向いている人 / 向いていない人
+   =========================== */
+.fit-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.fit-card {
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.fit-card--good {
+  background: #f0f7ef;
+  border: 1px solid #bfd9bc;
+}
+
+.fit-card--skip {
+  background: #fdf5ec;
+  border: 1px solid #f0d9bb;
+}
+
+.fit-card__title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 16px;
+}
+
+.fit-card--good .fit-card__title {
+  color: #2e6b28;
+}
+
+.fit-card--skip .fit-card__title {
+  color: #8b5120;
+}
+
+.fit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.fit-item__icon {
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: 16px;
+}
+
+.fit-card--good .fit-item {
+  color: #2a5e25;
+}
+
+.fit-card--good .fit-item__icon {
+  color: #3a8c32;
+}
+
+.fit-card--skip .fit-item {
+  color: #7a4820;
+}
+
+.fit-card--skip .fit-item__icon {
+  color: #c07838;
+}
+
+@media (max-width: 600px) {
+  .fit-section {
+    grid-template-columns: 1fr;
+  }
+}
+
 .map-section {
   background: var(--bg);
   border: 1px solid var(--border);

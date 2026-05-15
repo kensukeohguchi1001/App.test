@@ -98,6 +98,8 @@ export default function RestaurantDetail() {
     notes,
     googleMapUrl,
     recommendedFor,
+    goodFor,
+    notGoodFor,
   } = restaurant
 
   return (
@@ -174,14 +176,37 @@ export default function RestaurantDetail() {
           </ul>
         </div>
 
-        {/* こんな人におすすめ */}
-        {recommendedFor && (
+        {/* 向いている人 / 向いていない人 */}
+        {(goodFor || notGoodFor) && (
           <div className="detail-section">
-            <h2 className="detail-section-title">Good for</h2>
-            <div className="good-for-tags">
-              {recommendedFor.map((item, i) => (
-                <span key={i} className="tag-lg">{item}</span>
-              ))}
+            <h2 className="detail-section-title">Is this right for you?</h2>
+            <div className="fit-section">
+              {goodFor && (
+                <div className="fit-card fit-card--good">
+                  <div className="fit-card__title">You'll love it if…</div>
+                  <ul className="fit-list">
+                    {goodFor.map((item, i) => (
+                      <li key={i} className="fit-item">
+                        <span className="fit-item__icon">✓</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {notGoodFor && (
+                <div className="fit-card fit-card--skip">
+                  <div className="fit-card__title">Maybe not if…</div>
+                  <ul className="fit-list">
+                    {notGoodFor.map((item, i) => (
+                      <li key={i} className="fit-item">
+                        <span className="fit-item__icon">→</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         )}

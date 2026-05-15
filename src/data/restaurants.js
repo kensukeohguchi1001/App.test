@@ -35,6 +35,17 @@ export const restaurants = [
     googleMapUrl: "https://maps.google.com/?q=Kakiya+牡蠣屋+Hiroshima",
     tags: ["seafood", "oyster", "local", "casual", "lively", "solo", "couple", "tourist-friendly"],
     recommendedFor: ["Solo travelers", "Couples", "Seafood lovers"],
+    goodFor: [
+      "First-time visitors to Hiroshima — oysters are the city's signature dish",
+      "Solo diners and couples wanting a relaxed, satisfying meal",
+      "People who've never tried Japanese oysters and want an easy introduction",
+      "Anyone who wants a local experience without language barriers",
+    ],
+    notGoodFor: [
+      "People who dislike seafood — the menu is almost entirely oyster-focused",
+      "Budget travelers — oysters add up quickly and the bill can surprise you",
+      "Anyone wanting a quiet, intimate dinner on a weekend (it gets very busy)",
+    ],
   },
   {
     id: 2,
@@ -67,6 +78,18 @@ export const restaurants = [
     googleMapUrl: "https://maps.google.com/?q=Nakanishi+Honten+Hiroshima+Motomachi",
     tags: ["seafood", "oyster", "local", "hidden-gem", "quiet", "intimate", "couple", "solo", "unique"],
     recommendedFor: ["Adventurous eaters", "Solo travelers", "Couples"],
+    goodFor: [
+      "Solo travelers and couples who enjoy stepping into the unknown",
+      "Anyone visiting between October and April — oyster season is when this place truly shines",
+      "People who want a 'locals only' counter experience with no tourist energy whatsoever",
+      "Experienced Japan travelers who are comfortable without English support",
+    ],
+    notGoodFor: [
+      "Groups of 3 or more — only 10 counter seats, hard to get together",
+      "Anyone who needs an English menu or English-speaking staff",
+      "First-time Japan visitors who aren't yet confident navigating without English",
+      "Visitors in summer (May–September) — outside oyster season, some of the magic is gone",
+    ],
   },
   {
     id: 3,
@@ -98,6 +121,17 @@ export const restaurants = [
     googleMapUrl: "https://maps.google.com/?q=Okonomi-mura+お好み村+Hiroshima",
     tags: ["okonomiyaki", "lively", "tourist-friendly", "group", "family", "budget", "casual"],
     recommendedFor: ["Families", "Groups", "First-time visitors"],
+    goodFor: [
+      "First-time visitors to Hiroshima — the best, most accessible intro to okonomiyaki",
+      "Families, groups, and anyone who wants a guaranteed fun and easy experience",
+      "People who want to compare different okonomiyaki styles side-by-side",
+      "Budget-conscious travelers — filling, delicious, and very affordable",
+    ],
+    notGoodFor: [
+      "Those looking for a 'hidden gem' or quiet local experience — it's busy and well-known",
+      "Anyone who dislikes noisy, crowded, lively environments",
+      "Travelers who have already tried okonomiyaki and want something more unique or off the beaten path",
+    ],
   },
   {
     id: 4,
@@ -130,6 +164,18 @@ export const restaurants = [
     googleMapUrl: "https://maps.google.com/?q=Hassei+Hiroshima+Yokogawa",
     tags: ["okonomiyaki", "local", "hidden-gem", "quiet", "casual", "solo", "budget", "unique"],
     recommendedFor: ["Solo travelers", "Adventurous eaters"],
+    goodFor: [
+      "Solo travelers who want to sit at a counter and feel genuinely part of the neighborhood",
+      "Okonomiyaki lovers who want the real, unfiltered neighborhood version — not the tourist one",
+      "Budget-conscious travelers — outstanding quality at very low prices",
+      "Anyone willing to travel a little outside the center for something special",
+    ],
+    notGoodFor: [
+      "Groups of 3 or more — only 6 counter seats, almost impossible to seat together",
+      "Anyone who needs English menus or staff who speak English",
+      "Visitors who prefer tourist-friendly, easy-to-navigate spots",
+      "People in a rush — it's small and you may need to wait",
+    ],
   },
   {
     id: 5,
@@ -161,6 +207,18 @@ export const restaurants = [
     googleMapUrl: "https://maps.google.com/?q=Ramen+Ichigen+一幻+Hiroshima",
     tags: ["ramen", "noodles", "local", "casual", "solo", "budget", "unique", "lively"],
     recommendedFor: ["Solo travelers", "Ramen enthusiasts", "Anyone curious about Hiroshima specialties"],
+    goodFor: [
+      "Ramen enthusiasts curious about Hiroshima's unique shrimp-based style",
+      "Solo travelers wanting a quick, satisfying, affordable meal",
+      "Anyone who wants to eat something genuinely original — this style exists almost nowhere else",
+      "People with limited time who still want a proper local experience",
+    ],
+    notGoodFor: [
+      "Anyone with a shellfish or shrimp allergy — the broth is entirely shrimp-based",
+      "Those wanting a long, leisurely dinner — counter seating, fairly quick pace",
+      "Groups of 4 or more — seating is limited and not designed for groups",
+      "People who prefer mild, subtle flavors — the shrimp broth is intense",
+    ],
   },
   {
     id: 6,
@@ -193,6 +251,18 @@ export const restaurants = [
     googleMapUrl: "https://maps.google.com/?q=Tategami+Sake+Bar+Hiroshima+Nagarekawa",
     tags: ["sake", "drinks", "quiet", "intimate", "couple", "date", "hidden-gem", "local", "solo", "unique"],
     recommendedFor: ["Sake enthusiasts", "Couples", "Solo adventurers"],
+    goodFor: [
+      "Sake enthusiasts or anyone genuinely curious about Japanese sake culture",
+      "Couples looking for a quiet, intimate evening away from the crowds",
+      "Solo travelers who enjoy slow, thoughtful evenings and good conversation",
+      "Night owls — this place doesn't even open until 19:00",
+    ],
+    notGoodFor: [
+      "Non-drinkers — food is minimal, this is a sake-first experience",
+      "Groups larger than 3 — only 8 seats total",
+      "Anyone who needs a full dinner — the snacks are small plates, not a meal",
+      "Early evening visitors — doesn't open until 19:00",
+    ],
   },
   {
     id: 7,
@@ -226,6 +296,18 @@ export const restaurants = [
     googleMapUrl: "https://maps.google.com/?q=Fumi+izakaya+Hiroshima+Ebisu-cho",
     tags: ["izakaya", "local", "casual", "seasonal", "couple", "date", "group", "sake", "quiet", "hidden-gem"],
     recommendedFor: ["Couples", "Small groups", "Foodies"],
+    goodFor: [
+      "Couples and small groups (2–4 people) wanting a memorable, unhurried dinner",
+      "Food lovers interested in how Japanese cuisine changes with the seasons",
+      "Sake enthusiasts who want their drinks paired thoughtfully with food",
+      "Anyone happy to let the chef guide them — the omakase approach here is wonderful",
+    ],
+    notGoodFor: [
+      "Groups of 5 or more — the space is genuinely intimate and small",
+      "Spontaneous visitors — reservations are strongly recommended and often necessary",
+      "Budget travelers — this is a quality-first experience and priced accordingly",
+      "Those who need a full English menu — some English is spoken, but it's limited",
+    ],
   },
   {
     id: 9,
@@ -274,6 +356,18 @@ export const restaurants = [
     googleMapUrl: "https://maps.app.goo.gl/oUUEspzFpXPzayio7",
     tags: ["seafood", "izakaya", "local", "casual", "lively", "sake", "group", "solo", "hidden-gem"],
     recommendedFor: ["Solo travelers", "Groups", "Seafood lovers", "Adventurous eaters"],
+    goodFor: [
+      "Seafood lovers — especially anyone curious about ultra-fresh sashimi done right",
+      "People who think they don't like raw fish — this place genuinely changes minds",
+      "Solo travelers comfortable stepping into a local, Japanese-speaking spot",
+      "Anyone wanting to experience the authentic after-work drinking culture of Hiroshima",
+    ],
+    notGoodFor: [
+      "Non-smokers sensitive to cigarette smoke — smoking is permitted inside",
+      "Families with young children — the atmosphere is very much an adult after-work crowd",
+      "Those who need comprehensive English support throughout the meal",
+      "Anyone looking for a light, quick bite — this is a sit-down eating and drinking experience",
+    ],
   },
   {
     id: 8,
@@ -307,6 +401,18 @@ export const restaurants = [
     googleMapUrl: "https://maps.google.com/?q=Shunsuke+立ち飲み+Hiroshima+Nagarekawa",
     tags: ["izakaya", "local", "casual", "lively", "group", "sake", "drinks", "budget", "solo", "unique"],
     recommendedFor: ["Groups", "Solo adventurers", "Late-night crowd"],
+    goodFor: [
+      "Solo travelers who want to be thrown into real, unfiltered local life",
+      "Groups of friends up for a loud, fun, cheap night out",
+      "Anyone who wants the most spontaneous and 'unscripted local' experience in Hiroshima",
+      "Night owls — open until 1:00am, gets more fun as the evening goes on",
+    ],
+    notGoodFor: [
+      "Anyone with mobility concerns — standing only, no seats at all",
+      "Families with children — the vibe is firmly adult and rowdy",
+      "Those who prefer calm, quiet dining — this place is intentionally loud and crowded",
+      "Non-drinkers — it's a drinking spot first, the food is secondary",
+    ],
   },
 ]
 
