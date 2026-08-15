@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import Header from './components/Header'
-import DisclaimerBanner from './components/DisclaimerBanner'
-import SampleDataNotice from './components/SampleDataNotice'
+import TrustBar from './components/TrustBar'
 import SearchBar from './components/SearchBar'
 import MapView from './components/MapView'
 import ResultPanel from './components/ResultPanel'
@@ -38,12 +37,13 @@ export default function App() {
   return (
     <div className="app-wrapper">
       <Header />
-      <DisclaimerBanner />
+      <div className="hero">
+        <h2 className="hero__heading brand-font">その土地、災害リスクをパッと確認</h2>
+        <p className="hero__tagline">住所を入力するか、地図をタップするだけ</p>
+      </div>
+      <TrustBar />
       <main className="main-content">
-        <div className="toolbar">
-          <SearchBar onLocate={handleLocate} />
-          <SampleDataNotice />
-        </div>
+        <SearchBar onLocate={handleLocate} />
         <div className="map-layout">
           {loadError ? (
             <p className="load-error">{loadError}</p>

@@ -4,8 +4,8 @@ export default function Header() {
       <div className="site-header__inner">
         <span className="site-header__icon" aria-hidden="true">⛰️</span>
         <div>
-          <h1 className="site-header__title">広島 防災リスク可視化</h1>
-          <p className="site-header__subtitle">土砂災害警戒区域マップ（プロトタイプ v0.1）</p>
+          <h1 className="site-header__title brand-font">ここ、大丈夫？</h1>
+          <p className="site-header__subtitle">広島 土砂災害リスクマップ（プロトタイプ）</p>
         </div>
       </div>
     </header>

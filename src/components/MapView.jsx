@@ -80,21 +80,34 @@ export default function MapView({ hazardData, searchLocation, onResult }) {
   }
 
   return (
-    <MapContainer center={HIROSHIMA_CENTER} zoom={INITIAL_ZOOM} className="map-container">
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {hazardData && (
-        <GeoJSON ref={geoJsonRef} data={hazardData} style={zoneStyle} onEachFeature={onEachFeature} />
-      )}
-      {searchLocation && (
-        <Marker position={[searchLocation.lat, searchLocation.lng]}>
-          <Popup>{searchLocation.title}</Popup>
-        </Marker>
-      )}
-      <FlyToLocation location={searchLocation} />
-      <ClickHandler hazardData={hazardData} onResult={onResult} />
-    </MapContainer>
+    <div className="map-card">
+      <span className="map-badge">🧪 デモ用サンプルデータ</span>
+      <div className="map-legend">
+        <div className="map-legend__item">
+          <span className="map-legend__swatch" style={{ background: CATEGORY_COLORS.caution }} />
+          警戒区域
+        </div>
+        <div className="map-legend__item">
+          <span className="map-legend__swatch" style={{ background: CATEGORY_COLORS.special }} />
+          特別警戒区域
+        </div>
+      </div>
+      <MapContainer center={HIROSHIMA_CENTER} zoom={INITIAL_ZOOM} className="map-container">
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {hazardData && (
+          <GeoJSON ref={geoJsonRef} data={hazardData} style={zoneStyle} onEachFeature={onEachFeature} />
+        )}
+        {searchLocation && (
+          <Marker position={[searchLocation.lat, searchLocation.lng]}>
+            <Popup>{searchLocation.title}</Popup>
+          </Marker>
+        )}
+        <FlyToLocation location={searchLocation} />
+        <ClickHandler hazardData={hazardData} onResult={onResult} />
+      </MapContainer>
+    </div>
   )
 }
