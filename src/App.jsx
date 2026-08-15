@@ -1,59 +1,37 @@
-import { useEffect, useState } from 'react'
-import Header from './components/Header'
-import TrustBar from './components/TrustBar'
-import SearchBar from './components/SearchBar'
-import MapView from './components/MapView'
-import ResultPanel from './components/ResultPanel'
-import Footer from './components/Footer'
-import { findZonesAtPoint } from './utils/hazard'
+import { useCallback, useRef, useState } from 'react'
+import StartScreen from './components/StartScreen'
+import GameCanvas from './components/GameCanvas'
+import HUD from './components/HUD'
+import TouchControls from './components/TouchControls'
 
 export default function App() {
-  const [hazardData, setHazardData] = useState(null)
-  const [searchLocation, setSearchLocation] = useState(null)
-  const [result, setResult] = useState(null)
-  const [loadError, setLoadError] = useState('')
+  const [screen, setScreen] = useState('start') // start | race
+  const [gameKey, setGameKey] = useState(0)
+  const [raceState, setRaceState] = useState(null)
+  const engineRef = useRef(null)
 
-  useEffect(() => {
-    fetch('/data/hazard-zones-sample.geojson')
-      .then((res) => {
-        if (!res.ok) throw new Error(`区域データの読み込みに失敗しました（${res.status}）`)
-        return res.json()
-      })
-      .then(setHazardData)
-      .catch((err) => setLoadError(err.message))
-  }, [])
+  const handleStateChange = useCallback((state) => setRaceState(state), [])
 
-  function handleLocate(location) {
-    setSearchLocation(location)
-    const zones = hazardData ? findZonesAtPoint(hazardData, location.lat, location.lng) : []
-    setResult({ label: location.title, zones })
+  function handleStart() {
+    setRaceState(null)
+    setScreen('race')
   }
 
-  function handleMapResult(mapResult) {
-    setSearchLocation(null)
-    setResult(mapResult)
+  function handleRestart() {
+    setGameKey((k) => k + 1)
+    setRaceState(null)
   }
 
   return (
     <div className="app-wrapper">
-      <Header />
-      <div className="hero">
-        <h2 className="hero__heading brand-font">その土地、災害リスクをパッと確認</h2>
-        <p className="hero__tagline">住所を入力するか、地図をタップするだけ</p>
-      </div>
-      <TrustBar />
-      <main className="main-content">
-        <SearchBar onLocate={handleLocate} />
-        <div className="map-layout">
-          {loadError ? (
-            <p className="load-error">{loadError}</p>
-          ) : (
-            <MapView hazardData={hazardData} searchLocation={searchLocation} onResult={handleMapResult} />
-          )}
-          <ResultPanel result={result} />
+      {screen === 'start' && <StartScreen onStart={handleStart} />}
+      {screen === 'race' && (
+        <div className="race-screen">
+          <GameCanvas key={gameKey} onStateChange={handleStateChange} engineRef={engineRef} />
+          <HUD state={raceState} onRestart={handleRestart} />
+          <TouchControls engineRef={engineRef} />
         </div>
-      </main>
-      <Footer />
+      )}
     </div>
   )
 }
