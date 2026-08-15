@@ -1,34 +1,21 @@
-import { Link } from 'react-router-dom'
-
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer__inner">
-        <div className="footer__top">
-          <div className="footer__brand">
-            <div className="footer__logo-text">Hiroshima Local Plates</div>
-            <p className="footer__tagline">
-              For travelers who want to eat like locals.
-            </p>
-          </div>
-          <div className="footer__links">
-            <div className="footer__col">
-              <div className="footer__col-title">Explore</div>
-              <Link to="/restaurants">All Restaurants</Link>
-              <Link to="/quiz">Find My Match</Link>
-            </div>
-            <div className="footer__col">
-              <div className="footer__col-title">Categories</div>
-              <Link to="/restaurants">Seafood</Link>
-              <Link to="/restaurants">Okonomiyaki</Link>
-              <Link to="/restaurants">Ramen</Link>
-              <Link to="/restaurants">Izakaya</Link>
-            </div>
-          </div>
-        </div>
-        <div className="footer__bottom">
-          © {new Date().getFullYear()} Hiroshima Local Plates — Not sponsored. Not a tourist trap.
-        </div>
+    <footer className="site-footer">
+      <div className="site-footer__inner">
+        <p>
+          <strong>データ出典：</strong>
+          広島県インフラマネジメント基盤 Dobox「土砂災害警戒区域・特別警戒区域情報_広島県」（
+          <a href="https://hiroshima-dobox.jp/datasets/48" target="_blank" rel="noreferrer">
+            hiroshima-dobox.jp/datasets/48
+          </a>
+          ）／ 国土数値情報 土砂災害警戒区域データ（国土交通省、
+          <a href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A33-2016.html" target="_blank" rel="noreferrer">
+            nlftp.mlit.go.jp
+          </a>
+          ）
+        </p>
+        <p>住所検索：国土地理院 地名検索API（msearch.gsi.go.jp）</p>
+        <p>本画面のサンプルデータ最終更新日：2026-08-15（※デモ用の架空データです）</p>
       </div>
     </footer>
   )

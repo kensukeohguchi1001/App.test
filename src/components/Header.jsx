@@ -1,30 +1,12 @@
-import { Link, useLocation } from 'react-router-dom'
-
 export default function Header() {
-  const location = useLocation()
-
   return (
-    <header className="header">
-      <div className="header__inner">
-        <Link to="/" className="header__logo">
-          <div className="header__logo-icon">🍜</div>
-          <div className="header__logo-text">
-            <span className="header__logo-main">Hiroshima Local Plates</span>
-            <span className="header__logo-sub">For travelers who want to eat like locals</span>
-          </div>
-        </Link>
-
-        <nav className="header__nav">
-          <Link
-            to="/restaurants"
-            className={`nav-link ${location.pathname === '/restaurants' ? 'nav-link--active' : ''}`}
-          >
-            Restaurants
-          </Link>
-          <Link to="/quiz" className="nav-link nav-link--primary">
-            Find My Match ✨
-          </Link>
-        </nav>
+    <header className="site-header">
+      <div className="site-header__inner">
+        <span className="site-header__icon" aria-hidden="true">⛰️</span>
+        <div>
+          <h1 className="site-header__title">広島 防災リスク可視化</h1>
+          <p className="site-header__subtitle">土砂災害警戒区域マップ（プロトタイプ v0.1）</p>
+        </div>
       </div>
     </header>
   )
